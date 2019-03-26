@@ -35,15 +35,41 @@ Articles
 						Posted by {{ $article->user->first_name }} on {{ $article->created_at }}
 					</div>
 					<div class="interaction">
-						<a href="#">Like</a> |
-						<a href="#">Dislike</a>
 						@if(Auth::user() == $article->user)
-							|
 							<a href="#" class="edit">Edit</a> |
 							<a href="{{ route('article.delete', ['article_id' => $article->id]) }}">Delete</a>
 						@endif
 					</div>
 				</article>
+				<div class="comment">
+					<h6>MAX</h6>
+					<p>Comment TEXT </p>
+					<div class="info">
+						Posted on 12 FEB 2019
+					</div>
+				</div>
+
+				<div class="comment">
+					<h6>Lara</h6>
+					<p>Comment TEXT</p>
+					<div class="info">
+						Posted on 13 FEB 2019
+					</div>
+				</div>
+				@if (Route::has('login'))
+					@auth
+						<div class="create_comment">
+							<form action="{{ route('comment.create')}}" method="post">
+								<div class="form-group">
+									<textarea class="form-control" type="text" name="body-comment" id="body-comment" rows="2" placeholder="Leave a comment..."></textarea>
+									<input type="hidden" value="{{ Session::token() }}" name="_token">
+								</div>
+								<button type="submit" class="btn btn-primary">Leave a comment</button>
+								<input type="hidden" value="{{ Session::token() }}" name="_token">
+							</form>
+						</div>
+					@endauth
+				@endif
 			@endforeach
 		</div>
 	</section>

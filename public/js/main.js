@@ -22,7 +22,7 @@ $('#modal-save').on('click', function() {
 	$.ajax({
 		method: 'POST',
 		url: url,
-		data: { body: $('#article-body').val(), title: $('#article-title').val(), articleId: articleId, _token: token}
+		data: {body: $('#article-body').val(), title: $('#article-title').val(), articleId: articleId, _token: token}
 	})
 	.done(function (msg) {
 		$(articleTitleElement).text(msg['new_title']);

@@ -10,11 +10,11 @@
 
 .posts .post {
 	padding-left: 10px;
-	border-left: 3px solid #a21b24;
 	margin-bottom: 30px;
 }
 
-.posts .post .info {
+.posts .post .info,
+.comment .info {
 	color: #aaa;
 	font-style: italic;
 }
@@ -42,4 +42,29 @@
 	border: 1px solid green;
 	background-color: #d1f9da;
 	color: green;
+}
+
+.comment,
+.create_comment {
+	border-bottom: 1px solid #e6e6e6;
+	margin-left: 30px;
+	margin-bottom: 15px;
+}
+
+.row {
+	border-left: 1px solid #ccc;;
+	border-right: 1px solid #ccc;
+}
+
+.post {
+	border-bottom: 1px solid #e6e6e6;
+}
+
+.comment h6,
+.comment p {
+	margin-bottom: 3px;
+}
+
+.create_comment {
+	padding-bottom: 20px;
 }

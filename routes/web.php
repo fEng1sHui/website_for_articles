@@ -57,3 +57,8 @@ Route::get('/delete-article/{article_id}', [
 	'uses' => 'ArticleController@getDeleteArticle',
 	'as' => 'article.delete'
 ]);
+
+Route::post('/createcomment', [
+	'uses' => 'CommentController@postCreateComment',
+	'as' => 'comment.create'
+]);
